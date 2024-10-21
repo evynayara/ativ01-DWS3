@@ -1,19 +1,41 @@
-### Get todas as salas de aula GET http://localhost:40000/salasdeaula HTTP/1.1 Content-Type: application/json
+### Teste de inserção de sala de aula
+POST http://localhost:40000/salasdeaula HTTP/1.1
+content-type: application/json
 
-### Get sala de aula por ID GET http://localhost:40000/salasdeaula/1 HTTP/1.1 Content-Type: application/json
-
-### Inserir nova sala de aula POST http://localhost:40000/salasdeaula HTTP/1.1 Content-Type: application/json
-
-{
-    "descricao": "Sala 105", "localizacao": "Bloco B", "capacidade": 30
-
+{    
+    "descricao": "Sala 201",
+    "localizacao": "Prédio Y",
+    "capacidade": 35
 }
 
-### Atualizar sala de aula existente PUT http://localhost:40000/salasdeaula/1 HTTP/1.1 Content-Type: application/json
+### Teste de buscar todas as salas de aula
+GET http://localhost:40000/salasdeaula/ HTTP/1.1
+content-type: application/json
 
-{
-    "descricao": "Sala 102", "localizacao": "Bloco D", "capacidade": 40
-
+{    
 }
 
-### Deletar (soft delete) sala de aula DELETE http://localhost:40000/salasdeaula/1 HTTP/1.1 Content-Type: application/json
+### Teste de buscar sala de aula por ID
+GET http://localhost:40000/salasdeaula/3 HTTP/1.1
+content-type: application/json
+
+{    
+}
+
+### Teste de atualização de sala de aula
+PUT http://localhost:40000/salasdeaula/6 HTTP/1.1
+content-type: application/json
+
+{    
+    "descricao": "Sala 201",
+    "localizacao": "Prédio Y",
+    "capacidade": 40,
+    "removido": false
+}
+
+### Teste de exclusão de sala de aula
+DELETE http://localhost:40000/salasdeaula/3 HTTP/1.1
+content-type: application/json
+
+{    
+}
